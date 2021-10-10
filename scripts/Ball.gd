@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 export(float) var velocity_multiplier = 200.0
+export(float) var acceleration = 3.0
 
 var x: float = 0
 var y: float = 0
@@ -22,10 +23,13 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float):
+func _process(delta: float):
 	linear_velocity.x = velocity_multiplier*x
 	linear_velocity.y = velocity_multiplier*y
 	rotation_degrees = 0
+	
+	# acceleration
+	velocity_multiplier += acceleration*delta
 	pass
 
 func _on_body_entered(body: Node) -> void:
