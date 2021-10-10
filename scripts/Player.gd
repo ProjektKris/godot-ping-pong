@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 export(bool) var player1 = true
-export(float) var velocity = 300.0
+export(float) var velocity = 400.0
 
 var up := false
 var down := false
