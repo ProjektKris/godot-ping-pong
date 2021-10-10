@@ -5,10 +5,10 @@
 [ext_resource path="res://scripts/Main.gd" type="Script" id=3]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=4]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 511.75, 2.96979 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 300.081, 3.99109 )
 
 [node name="Main" type="Node2D"]
@@ -24,6 +24,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 509.5
+margin_right = 514.5
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 300 )
 
@@ -33,7 +41,7 @@ position = Vector2( 512, 300 )
 position = Vector2( 512, 600 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="TopWall" type="StaticBody2D" parent="." groups=[
 "wall_top",
@@ -42,7 +50,7 @@ position = Vector2( 0, 300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
 position = Vector2( 512, -300 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="RightWall" type="StaticBody2D" parent="." groups=[
 "wall_right",
@@ -51,7 +59,7 @@ position = Vector2( 1024, 300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="LeftWall" type="StaticBody2D" parent="." groups=[
 "wall_left",
@@ -60,7 +68,7 @@ position = Vector2( 0, 300 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Player2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 874, 300 )
