@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 511.75, 18 )
@@ -57,3 +58,10 @@ position = Vector2( 0, 300 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 rotation = 1.5708
 shape = SubResource( 3 )
+
+[node name="Player2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 874, 300 )
+player1 = false
+
+[node name="Player1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 150, 300 )
