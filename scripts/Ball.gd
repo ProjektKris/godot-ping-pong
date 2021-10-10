@@ -15,8 +15,9 @@ func _ready():
 	# determine starting direction
 	randomize()
 	x = rand_range(-1, 1)
-	randomize()
-	y = rand_range(-1, 1)
+	y = sqrt(1-pow(x,2))
+#	randomize()
+#	y = rand_range(-1, 1)
 	
 	pass # Replace with function body.
 
@@ -36,3 +37,6 @@ func _on_body_entered(body: Node) -> void:
 		"wall_right", "wall_left":
 			x = -x
 			pass
+		_:
+			if body.is_in_group("player"):
+				x = -x
